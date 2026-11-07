@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMIÈRE - Luxury Jewellery | Peshawar & Dubai</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav><div class="logo"><img src="logo2.png">LUMIÈRE<span>.</span></div><div class="nav-links" id="navLinks"><a href="#home">Home</a><a href="#collections">Collections</a><a href="#shop">Shop</a><a href="#bridal">Bridal</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div><div style="display:flex;gap:10px;align-items:center"><button class="cart-btn" onclick="openCart()">🛒 Cart <span id="cartCount">0</span></button><button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button></div></nav>
+
+<div class="hero" id="home"><div class="hero-badge">✦ NEW BRIDAL COLLECTION 2026 ✦</div><h1>Where Elegance<br><span>Meets Eternity</span></h1><p>Handcrafted Gold, Diamond & Kundan Jewellery - Made for Queens in Worldwide</p><div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center"><button class="btn-gold" onclick="document.getElementById('shop').scrollIntoView()">Shop Collection →</button><button class="btn-outline">Book Appointment</button></div><div class="hero-stats"><div><b>500+</b><span>Happy Brides</span></div><div><b>100%</b><span>Pure Gold</span></div><div><b>4.9★</b><span>Customer Rating</span></div></div></div>
+
+<div class="marquee"><div class="marquee-track"><span>✦ 22K GOLD &nbsp; ✦ DIAMOND &nbsp; ✦ KUNDAN &nbsp; ✦ BRIDAL SETS &nbsp; ✦ FREE DELIVERY &nbsp; ✦ CERTIFIED &nbsp; ✦ 22K GOLD &nbsp; ✦ DIAMOND &nbsp; ✦ KUNDAN &nbsp; ✦ BRIDAL SETS &nbsp; ✦ FREE DELIVERY &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp; ✦ CERTIFIED &nbsp;✦ CERTIFIED &nbsp;✦ CERTIFIED &nbsp;✦ CERTIFIED &nbsp;✦ CERTIFIED &nbsp;✦ CERTIFIED &nbsp;✦ CERTIFIED &nbsp;✦ CERTIFIED &nbsp;</span></div></div>
+
+<div class="section" id="collections"><h2>Our Collections</h2><p class="sub">Choose your timeless piece</p><div class="collections">
+<div class="coll-card reveal" onclick="filterMenu('gold',document.querySelectorAll('.filter button')[1])"><img src="necklaces.png"><div class="coll-info"><h3>Gold Necklaces</h3><span>24 Designs →</span></div></div>
+<div class="coll-card reveal" onclick="filterMenu('diamond',document.querySelectorAll('.filter button')[2])"><img src="diamind rings.png"><div class="coll-info"><h3>Diamond Rings</h3><span>18 Designs →</span></div></div>
+<div class="coll-card reveal" onclick="filterMenu('kundan',document.querySelectorAll('.filter button')[3])"><img src="kundan earings1.png"><div class="coll-info"><h3>Kundan Earrings</h3><span>32 Designs →</span></div></div>
+<div class="coll-card reveal" onclick="filterMenu('bridal',document.querySelectorAll('.filter button')[4])"><img src="bridal sets1.png"><div class="coll-info"><h3>Bridal Sets</h3><span>12 Designs →</span></div></div>
+</div></div>
+
+<div class="section" id="shop"><h2>Best Sellers - Shop Now</h2><p class="sub">12 Premium Designs - Click to view details</p>
+<div class="filter"><button class="active" onclick="filterMenu('all',this)">All</button><button onclick="filterMenu('gold',this)">Gold</button><button onclick="filterMenu('diamond',this)">Diamond</button><button onclick="filterMenu('kundan',this)">Kundan</button><button onclick="filterMenu('bridal',this)">Bridal</button></div>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:25px"><button class="filter-price" onclick="filterPrice('all',this)" style="background:#3A1A52;color:#fff;border:1px solid rgba(212,175,55,.4);padding:9px 18px;border-radius:20px;cursor:pointer">All Prices</button><button class="filter-price" onclick="filterPrice('low',this)" style="background:#3A1A52;color:#fff;border:1px solid rgba(212,175,55,.4);padding:9px 18px;border-radius:20px;cursor:pointer">Under 2 Lakh</button><button class="filter-price" onclick="filterPrice('mid',this)" style="background:#3A1A52;color:#fff;border:1px solid rgba(212,175,55,.4);padding:9px 18px;border-radius:20px;cursor:pointer">2 - 5 Lakh</button><button class="filter-price" onclick="filterPrice('high',this)" style="background:#3A1A52;color:#fff;border:1px solid rgba(212,175,55,.4);padding:9px 18px;border-radius:20px;cursor:pointer">5 Lakh+</button></div>
+<div class="products" id="productGrid"></div>
+</div>
+
+<div class="section" id="bridal"><div class="bridal reveal"><img src="the bridal edit2.png"><div class="bridal-text"><span style="color:#D4AF37;letter-spacing:2px;font-size:12px;font-weight:700">LIMITED EDITION</span><h2>The Bridal Edit 2026</h2><p>Your wedding day is the most special day of your life. Our bridal sets are designed to make every bride feel like a queen. Pure gold, real kundan and hand-made meenakari work.</p><ul><li>✔ Free Bridal Consultation</li><li>✔ Custom Design Available</li><li>✔ Pan Pakistan Delivery</li></ul><button class="btn-gold" onclick="filterMenu('bridal',document.querySelectorAll('.filter button')[4]);document.getElementById('shop').scrollIntoView()">View Bridal Collection →</button></div></div></div>
+
+<div class="section"><h2>About LUMIÈRE</h2><div class="about reveal"><img src="jewellery shop2.png"><div><h2 style="text-align:left">Crafted With Love In Peshawar</h2><p>Every piece is handcrafted by our expert artisans. 20 years of experience, 100% pure gold and certified diamonds.</p><p>Our mission is simple: To make every woman feel like a queen.</p><button class="btn-gold">Our Story →</button></div></div></div>
+
+<div class="section" id="reviews"><h2>What Our Customers Say</h2><p class="sub">⭐⭐⭐⭐⭐ 4.9 / 5 Rating</p><div class="reviews">
+<div class="review reveal">⭐⭐⭐⭐⭐<p>"I bought my wedding set from LUMIÈRE, everyone asked where I got it from! The quality is absolutely amazing."</p><br><b>- Ayesha Khan, Peshawar</b></div>
+<div class="review reveal">⭐⭐⭐⭐⭐<p>"I ordered from Dubai, delivery arrived in 3 days. The diamond ring looked exactly like the picture."</p><br><b>- Fatima Noor, Dubai</b></div>
+<div class="review reveal">⭐⭐⭐⭐⭐<p>"Pure gold, reasonable prices. The staff guided me so well. Highly recommended!"</p><br><b>- Mahnoor Ali, Islamabad</b></div>
+</div></div>
+
+<div class="section"><h2>Our Gallery</h2><p class="sub">Real customers, real shine</p><div class="gallery">
+<img src="gallery.png"><img src="gallery3.png"><img src="gallery4.png"><img src="gallery5.png"><img src="gallery6.png"><img src="gallery7.png"><img src="gallery8.png"><img src="galler9.png">
+</div></div>
+
+<div class="section" id="contact"><div class="contact"><h2>Book Your Private Appointment</h2><p>Book your appointment on WhatsApp, we will show you the full collection.</p><p>📍 University Road, Peshawar | 📞 0300-1234567 | 🕒 Open Daily: 11AM - 10PM</p><br><button class="btn-gold" onclick="window.open('https://wa.me/923001234567')">WhatsApp Now →</button></div></div>
+<footer>© 2026 LUMIÈRE Jewellery • Crafted with Love in Peshawar • Dubai • Pakistan</footer>
+
+<!-- POPUP -->
+<div id="popup" class="overlay" onclick="if(event.target===this) closePopup()"><div class="popup"><button class="close" onclick="closePopup()">✕</button><img id="pImg"><div class="popup-info"><h2 id="pTitle"></h2><p id="pDesc" style="color:#D0BEE8;margin:8px 0"></p><div class="price" id="pPrice" style="font-size:24px"></div><p id="pDetail" style="color:#D0BEE8;line-height:1.6;margin:10px 0"></p><p style="color:#D4AF37">✔ In Stock &nbsp; ✔ Certified &nbsp; ✔ Free Delivery</p><br><button class="btn-gold" id="pAdd" style="width:100%">Add to Cart 🛒</button><button class="btn-outline" style="width:100%;margin-top:10px" onclick="window.open('https://wa.me/923001234567')">Order on WhatsApp</button></div></div></div>
+
+<!-- CART -->
+<div id="cartDrawer" class="cart-drawer"><div class="cart-head"><h3>Your Cart 🛒</h3><button onclick="closeCart()" style="background:#D4AF37;border:none;width:30px;height:30px;border-radius:50%;cursor:pointer">✕</button></div><div id="cartItems" class="cart-items"><p style="text-align:center;color:#D0BEE8;margin-top:40px">Cart is empty</p></div><div class="cart-footer"><div style="display:flex;justify-content:space-between;font-weight:800"><span>Total:</span><span id="cartTotal" style="color:#D4AF37">Rs. 0</span></div><button class="btn-gold" style="width:100%;margin-top:14px" onclick="checkoutWA()">Checkout on WhatsApp →</button></div></div>
+
+<script>
+const products=[
+{n:"Royal Gold Necklace",d:"22K Gold • Handcrafted",p:485000,c:"gold",pr:"mid",img:"royal gol necklace.png",det:"Pure 22K gold, handcrafted by master artisans. Perfect for both bridal and party wear."},
+{n:"Diamond Solitaire Ring",d:"1.2 Carat • Certified",p:320000,c:"diamond",pr:"mid",img:"diamond solatire ring.png",det:"1.2 Carat certified diamond. Comes with a premium box and lifetime warranty."},
+{n:"Kundan Choker Set",d:"Bridal • Meenakari Work",p:195000,c:"kundan",pr:"low",img:"kundan choker set.png",det:"Bridal kundan choker with meenakari work. Earrings included, best choice for brides."},
+{n:"Royal Bridal Set",d:"Full Bridal • 22K Gold",p:850000,c:"bridal",pr:"high",img:"royal bridal set.png",det:"Full bridal set - Necklace, Earrings, Tikka, Jhumar. Complete bridal package."},
+{n:"Gold Jhumka Earrings",d:"22K Gold • Traditional",p:145000,c:"gold",pr:"low",img:"gold jhumka earings.png",det:"Traditional jhumka earrings, lightweight, perfect for daily and wedding wear."},
+{n:"Diamond Tennis Bracelet",d:"2 Carat • White Gold",p:520000,c:"diamond",pr:"high",img:"diamond tennis bracelet2.png",det:"Elegant tennis bracelet with perfect shine, ideal for daily wear."},
+{n:"Kundan Maang Tikka",d:"Kundan • Pearl Drop",p:85000,c:"kundan",pr:"low",img:"kundan maang tikka1.png",det:"Kundan tikka with pearl drop, completes your bridal look."},
+{n:"Bridal Gold Bangles",d:"Set of 12 • 22K Gold",p:380000,c:"bridal",pr:"mid",img:"bridal golg bangles2.png",det:"Set of 12 bangles in pure gold, the pride of a bride's hands."},
+{n:"Gold Pendant Set",d:"22K Gold • Chain Included",p:210000,c:"gold",pr:"mid",img:"gold pendat set1.png",det:"Elegant daily wear pendant with chain included, light and classy."},
+{n:"Diamond Stud Earrings",d:"1 Carat Pair • Certified",p:280000,c:"diamond",pr:"mid",img:"diamond stud earrings.png",det:"Classic diamond studs, match with every outfit."},
+{n:"Kundan Bridal Choker",d:"Heavy Bridal • Kundan",p:420000,c:"bridal",pr:"mid",img:"kundan choker set.png",det:"Heavy bridal choker, perfect combination of meenakari and kundan."},
+{n:"Luxury Gold Kara",d:"22K Gold • Men/Women",p:165000,c:"gold",pr:"low",img:"luxury gold kara.png",det:"Premium kara, best choice for gifting, with hallmark."},
+];
+let cart=[]; let curFilter='all'; let curPrice='all';
+function render(){
+  let list=products.filter(p=>(curFilter==='all'||p.c===curFilter)&&(curPrice==='all'||p.pr===curPrice));
+  document.getElementById('productGrid').innerHTML=list.map((p,i)=>`<div class="pro-card reveal show" onclick="openPopup(${products.indexOf(p)})"><div class="pro-img"><img src="${p.img}"><span class="badge">${p.c.toUpperCase()}</span></div><div class="pro-info"><h3>${p.n}</h3><p>${p.d}</p><div class="price">Rs. ${p.p.toLocaleString()}</div><button class="add-cart" onclick="event.stopPropagation();addToCart(${products.indexOf(p)})">Add to Cart 🛒</button></div></div>`).join('') || '<p style="text-align:center;color:#D0BEE8;grid-column:1/-1">No product in this filter</p>';
+}
+function filterMenu(c,btn){ document.querySelectorAll('.filter button').forEach(b=>b.classList.remove('active')); if(btn) btn.classList.add('active'); curFilter=c; render(); }
+function filterPrice(pr,btn){ document.querySelectorAll('.filter-price').forEach(b=>b.style.background='#3A1A52'); if(btn) btn.style.background='#D4AF37'; curPrice=pr; render(); }
+function openPopup(i){ let p=products[i]; document.getElementById('pImg').src=p.img; document.getElementById('pTitle').innerText=p.n; document.getElementById('pDesc').innerText=p.d; document.getElementById('pPrice').innerText='Rs. '+p.p.toLocaleString(); document.getElementById('pDetail').innerText=p.det; document.getElementById('pAdd').onclick=()=>{addToCart(i); closePopup()}; document.getElementById('popup').classList.add('show'); }
+function closePopup(){ document.getElementById('popup').classList.remove('show'); }
+function addToCart(i){ cart.push(products[i]); document.getElementById('cartCount').innerText=cart.length; renderCart(); openCart(); }
+function renderCart(){ let box=document.getElementById('cartItems'); if(!cart.length) box.innerHTML='<p style="text-align:center;color:#D0BEE8;margin-top:40px">Cart is empty</p>'; else box.innerHTML=cart.map((it,idx)=>`<div class="cart-item"><div><b>${it.n}</b><br><span style="color:#D4AF37">Rs. ${it.p.toLocaleString()}</span></div><button onclick="cart.splice(${idx},1);document.getElementById('cartCount').innerText=cart.length;renderCart()" style="border:none;background:none;color:#ff6b6b;font-size:18px;cursor:pointer">✕</button></div>`).join(''); let t=cart.reduce((s,x)=>s+x.p,0); document.getElementById('cartTotal').innerText='Rs. '+t.toLocaleString(); }
+function openCart(){ document.getElementById('cartDrawer').classList.add('open'); }
+function closeCart(){ document.getElementById('cartDrawer').classList.remove('open'); }
+function checkoutWA(){ let msg='Hi LUMIÈRE! I want to order:\n'+cart.map(i=>i.n+' - Rs.'+i.p.toLocaleString()).join('\n')+'\nTotal: '+document.getElementById('cartTotal').innerText; window.open('https://wa.me/923001234567?text='+encodeURIComponent(msg)); }
+render();
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+</script>
+</body>
+</html>
